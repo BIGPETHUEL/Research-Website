@@ -1,0 +1,421 @@
+/* Paper Items Styling */
+.papers-box {
+    padding: 0;
+    overflow: hidden;
+}
+
+.paper-item {
+    padding: 2rem;
+    border-bottom: 1px solid #30363d;
+    transition: background-color 0.3s ease;
+}
+
+.paper-item:last-child {
+    border-bottom: none;
+}
+
+.paper-item:hover {
+    background-color: #1c2128;
+}
+
+.paper-item h3 {
+    color: #58a6ff;
+    margin-bottom: 0.5rem;
+}
+
+.authors {
+    color: #56d364;
+    font-size: 0.9em;
+    margin-bottom: 0.3rem;
+}
+
+.journal {
+    color: #8b949e;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 1rem;
+}
+
+.abstract {
+    color: #c9d1d9;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.paper-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.paper-links a {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-link {
+    background-color: rgba(88, 166, 255, 0.1);
+    color: #58a6ff;
+}
+
+.view-link::before {
+    content: "🔗";
+}
+
+.download-link {
+    background-color: rgba(86, 211, 100, 0.1);
+    color: #56d364;
+}
+
+.download-link::before {
+    content: "📄";
+}
+
+.paper-links a:hover {
+    transform: translateY(-2px);
+}
+
+.view-link:hover {
+    background-color: rgba(88, 166, 255, 0.2);
+}
+
+.download-link:hover {
+    background-color: rgba(86, 211, 100, 0.2);
+}
+
+/* Paper Category Statistics */
+.category-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 200px;
+    background: #1c2128;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #30363d;
+}
+
+.stat-card h4 {
+    color: #58a6ff;
+    margin-bottom: 0.5rem;
+    font-size: 1.1em;
+}
+
+.stat-number {
+    font-size: 2em;
+    color: #56d364;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+/* Paper Download Button Enhancements */
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(86, 211, 100, 0.1);
+    border: 1px solid rgba(86, 211, 100, 0.2);
+    border-radius: 6px;
+    color: #56d364;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    background: rgba(86, 211, 100, 0.2);
+    transform: translateY(-2px);
+}
+
+.download-button::before {
+    content: "📥";
+}
+
+/* Paper Citation Box */
+.citation-box {
+    background: #161b22;
+    border-left: 3px solid #58a6ff;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-family: monospace;
+    font-size: 0.9em;
+    color: #8b949e;
+    overflow-x: auto;
+}
+
+.copy-citation {
+    float: right;
+    background: none;
+    border: none;
+    color: #58a6ff;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.9em;
+}
+
+.copy-citation:hover {
+    color: #56d364;
+}
+
+/* Paper Tags */
+.paper-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+}
+
+.paper-tag {
+    background: rgba(88, 166, 255, 0.1);
+    color: #58a6ff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+/* Paper Abstract Toggle */
+.abstract-toggle {
+    background: none;
+    border: none;
+    color: #58a6ff;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9em;
+    margin-top: 0.5rem;
+}
+
+.abstract-toggle::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.abstract-toggle.active::before {
+    transform: rotate(90deg);
+}
+
+.abstract-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.abstract-content.visible {
+    max-height: 500px;
+}
+
+/* Search and Filter Controls */
+.paper-search, .year-filter {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #c9d1d9;
+    font-size: 1rem;
+}
+
+.paper-search {
+    margin-bottom: 0.5rem;
+}
+
+.year-filter {
+    margin-bottom: 2rem;
+}
+
+.paper-search:focus, .year-filter:focus {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
+
+/* Download Progress Bar */
+.download-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #56d364;
+    transition: width 0.2s ease;
+}
+
+/* Paper Preview Popup */
+.paper-preview {
+    position: absolute;
+    display: none;
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 1rem;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.paper-preview h4 {
+    color: #58a6ff;
+    margin-bottom: 0.5rem;
+}
+
+.paper-preview p {
+    margin: 0.5rem 0;
+    font-size: 0.9em;
+}
+
+/* Citation Management */
+.saved-citations-container {
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.saved-citations-container h3 {
+    color: #58a6ff;
+    margin-bottom: 1rem;
+}
+
+.citation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    border-bottom: 1px solid #30363d;
+    gap: 1rem;
+}
+
+.citation-item:last-child {
+    border-bottom: none;
+}
+
+.citation-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #c9d1d9;
+}
+
+.remove-citation {
+    background: rgba(248, 81, 73, 0.1);
+    color: #f85149;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: all 0.2s ease;
+}
+
+.remove-citation:hover {
+    background: rgba(248, 81, 73, 0.2);
+}
+
+.export-citations {
+    background: #238636;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.export-citations:hover {
+    background: #2ea043;
+}
+
+/* Enhanced Filters */
+.filter-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.category-filter {
+    flex: 1;
+    padding: 0.8rem;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #c9d1d9;
+    font-size: 1rem;
+}
+
+.category-filter:focus {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+}
+
+/* Preview Enhancements */
+.preview-metadata {
+    margin-top: 1rem;
+}
+
+.preview-metadata p {
+    margin: 0.5rem 0;
+}
+
+.preview-abstract {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.preview-abstract::-webkit-scrollbar {
+    width: 4px;
+}
+
+.preview-abstract::-webkit-scrollbar-track {
+    background: #161b22;
+}
+
+.preview-abstract::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 2px;
+}
+
+/* Download Progress Animation */
+@keyframes downloadProgress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.download-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #56d364;
+    animation: downloadProgress 1s ease-out;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .paper-item {
+        padding: 1.5rem;
+    }
+
+    .paper-links {
+        flex-direction: column;
+    }
+
+    .paper-links a {
+        width: 100%;
+        justify-content: center;
+    }
+}

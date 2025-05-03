@@ -1,0 +1,451 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Consolas', 'Courier New', monospace;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.6;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #161b22;
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid #30363d;
+}
+
+.sidebar header {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #58a6ff;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar a {
+  color: #c9d1d9;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0;
+  transition: color 0.2s;
+}
+
+.sidebar a:hover {
+  color: #56d364;
+}
+
+.sidebar a.active {
+  color: #56d364;
+  font-weight: bold;
+  background-color: rgba(86, 211, 100, 0.1);
+  border-radius: 4px;
+  padding-left: 0.5rem;
+}
+
+/* Papers Link Styling */
+.papers-link {
+    margin-top: 1rem;
+    background-color: rgba(88, 166, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.papers-link:hover {
+    background-color: rgba(86, 211, 100, 0.1);
+    transform: translateX(5px);
+}
+
+/* Main Content */
+.content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content h1, .content h2 {
+  color: #58a6ff;
+  margin-bottom: 1rem;
+}
+
+.content h3 {
+  color: #56d364;
+  margin-bottom: 0.8rem;
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Content Boxes */
+.content-box {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-box ul {
+  list-style: none;
+  margin-left: 1rem;
+}
+
+.content-box li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.content-box li:before {
+  content: "→";
+  position: absolute;
+  left: -1rem;
+  color: #56d364;
+}
+
+.content-box ul ul {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.content-box ul ul li {
+  margin-bottom: 0.3rem;
+  font-size: 0.95em;
+  color: #8b949e;
+}
+
+.content-box ul ul li:before {
+  content: "•";
+  color: #8b949e;
+}
+
+.researcher-info, .contact-info {
+  background-color: #1c2128;
+  border-left: 4px solid #58a6ff;
+}
+
+.contact-info a {
+  color: #58a6ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-info a:hover {
+  color: #56d364;
+  text-decoration: underline;
+}
+
+.content-box strong {
+  color: #58a6ff;
+  font-weight: 600;
+}
+
+/* Research Papers Styling */
+.paper-info {
+  display: block;
+  color: #8b949e;
+  font-size: 0.85em;
+  margin-left: 0.5rem;
+  margin-top: 0.2rem;
+  font-style: italic;
+}
+
+.content-box li a {
+  display: inline-block;
+  padding: 0.2rem 0;
+}
+
+.content-box li a:hover + .paper-info {
+  color: #58a6ff;
+}
+
+/* Mobile Toggle Button */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  right: 1.5rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  color: #c9d1d9;
+  font-size: 1.5rem;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Animations and Transitions */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-box-hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #58a6ff;
+  color: #0d1117;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: #56d364;
+}
+
+/* Enhanced Link Styles */
+.content-box a {
+  color: #58a6ff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.content-box a:hover {
+  color: #56d364;
+}
+
+.content-box a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #56d364;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.content-box a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Section Highlights */
+section h2 {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #58a6ff, #56d364);
+  border-radius: 2px;
+}
+
+/* Updates Section */
+.updates-box {
+  border-left: 4px solid #56d364;
+}
+
+.update-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.update-item {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.update-item:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  background: #56d364;
+  border-radius: 50%;
+}
+
+.update-date {
+  color: #8b949e;
+  font-size: 0.9em;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.update-item h4 {
+  color: #58a6ff;
+  margin-bottom: 0.5rem;
+  font-size: 1.1em;
+}
+
+.update-item p {
+  color: #c9d1d9;
+  font-size: 0.95em;
+  margin-bottom: 0;
+}
+
+/* Enhanced Animations */
+.update-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.5s ease forwards;
+}
+
+.update-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.update-item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Contact Section Enhancements */
+.contact-info a[href^="mailto:"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  background-color: rgba(88, 166, 255, 0.1);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.contact-info a[href^="mailto:"]:hover {
+  background-color: rgba(86, 211, 100, 0.1);
+  transform: translateX(5px);
+}
+
+.contact-info a[href^="mailto:"]::before {
+  content: "✉️";
+  font-size: 1.1em;
+}
+
+.contact-info a[href^="tel:"] {
+  padding: 0.3rem 0.6rem;
+  background-color: rgba(88, 166, 255, 0.1);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.contact-info a[href^="tel:"]:hover {
+  background-color: rgba(86, 211, 100, 0.1);
+  transform: translateX(5px);
+}
+
+.contact-info a[href^="tel:"]::before {
+  content: "📱";
+  margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100vh;
+    width: 200px;
+    transition: left 0.3s ease;
+    z-index: 999;
+    border-right: none;
+    border-bottom: 1px solid #30363d;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .content {
+    margin-top: 4rem;
+    padding: 1rem;
+  }
+
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  section h2::after {
+    width: 40px;
+  }
+
+  .update-list {
+    gap: 1rem;
+  }
+
+  .update-item {
+    padding-left: 1rem;
+  }
+
+  .paper-info {
+    margin-left: 0.3rem;
+    font-size: 0.8em;
+  }
+
+  .contact-info a[href^="mailto:"],
+  .contact-info a[href^="tel:"] {
+    display: inline-block;
+    width: 100%;
+    margin: 0.2rem 0;
+  }
+}
